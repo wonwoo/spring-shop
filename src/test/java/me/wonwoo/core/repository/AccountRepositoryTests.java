@@ -28,19 +28,21 @@ public class AccountRepositoryTests {
   @Test
   public void findOneTest() {
     Account account = entityManager.persist(
-        new Account("wonwoo", null,
+        new Account("1", "wonwoo", null,
             new Address("성남", "산성대로", "123-123")
         ));
     Account result = accountRepository.findOne(account.getId());
+    assertThat(result.getLoginId()).isEqualTo("1");
     assertThat(result.getName()).isEqualTo("wonwoo");
     assertThat(result.getAddress()).isEqualTo(new Address("성남", "산성대로", "123-123"));
   }
 
   @Test
-  public void findByNameTest() {
-    entityManager.persist(new Account("wonwoo", null,
+  public void findByLoginIdTest() {
+    entityManager.persist(new Account("1", "wonwoo", null,
         new Address("성남", "산성대로", "123-123")));
-    Account result = accountRepository.findByname("wonwoo");
+    Account result = accountRepository.findByLoginId("1");
+    assertThat(result.getLoginId()).isEqualTo("1");
     assertThat(result.getName()).isEqualTo("wonwoo");
     assertThat(result.getAddress()).isEqualTo(new Address("성남", "산성대로", "123-123"));
   }

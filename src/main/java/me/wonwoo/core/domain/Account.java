@@ -11,6 +11,8 @@ import java.util.Set;
 @Entity
 public class Account extends BaseEntity {
 
+  private String loginId;
+
   private String name;
 
   @OneToMany(mappedBy = "account")
@@ -23,10 +25,20 @@ public class Account extends BaseEntity {
 
   }
 
-  public Account(String name, Set<Order> orders, Address address) {
+  public Account(String loginId, String name, Set<Order> orders, Address address) {
+    this.loginId = loginId;
     this.name = name;
     this.orders = orders;
     this.address = address;
+  }
+
+
+  public String getLoginId() {
+    return loginId;
+  }
+
+  public void setLoginId(String loginId) {
+    this.loginId = loginId;
   }
 
   public String getName() {
