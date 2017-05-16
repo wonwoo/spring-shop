@@ -1,4 +1,4 @@
-package me.wonwoo.domain;
+package me.wonwoo.core.domain;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,14 +12,14 @@ import java.io.Serializable;
 @MappedSuperclass
 public class BaseEntity implements Serializable {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+  @GeneratedValue
+  private Long id;
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

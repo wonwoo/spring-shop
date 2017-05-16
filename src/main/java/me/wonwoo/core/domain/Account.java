@@ -1,4 +1,4 @@
-package me.wonwoo.domain;
+package me.wonwoo.core.domain;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -22,6 +22,18 @@ public class Account extends BaseEntity {
 
   @Embedded
   private Address address;
+
+  Account() {
+
+  }
+
+  public Account(String username, String password, String name, Set<Order> orders, Address address) {
+    this.username = username;
+    this.password = password;
+    this.name = name;
+    this.orders = orders;
+    this.address = address;
+  }
 
   public String getUsername() {
     return username;

@@ -1,8 +1,7 @@
-package me.wonwoo.domain;
+package me.wonwoo.core.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**

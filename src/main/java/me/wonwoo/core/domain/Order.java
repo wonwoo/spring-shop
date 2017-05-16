@@ -1,4 +1,4 @@
-package me.wonwoo.domain;
+package me.wonwoo.core.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

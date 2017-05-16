@@ -1,4 +1,4 @@
-package me.wonwoo.domain;
+package me.wonwoo.core.domain;
 
 import org.junit.Rule;
 import org.junit.Test;
